@@ -31,9 +31,10 @@ class LCD1602(I2C):
 	ENTRY_RIGHT = 1 << 1
 	ENTRY_SHIFT = 1 << 0
 
-	WAIT_E_ON = 0.0000002 #Tpw
-	WAIT_LONG = 0.00152
-	WAIT_SHORT = 0.000037
+	# Taken from the docs and tweaked till it doesn't cause problems
+	WAIT_E_ON = 0.00002
+	WAIT_LONG = 0.0152
+	WAIT_SHORT = 0.0037
 
 
 	def __init__(self, bus=1, bl=1):
